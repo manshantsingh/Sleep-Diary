@@ -37,11 +37,11 @@ public class DailyInfo {
         feelRate=_feelRate;
     }
 
-    private String TimeToString(int time){
+    private String timeToString(int time){
         return "";
     }
 
-    private int StringToTime(String time){
+    private int stringToTime(String time){
         return 0;
     }
 
