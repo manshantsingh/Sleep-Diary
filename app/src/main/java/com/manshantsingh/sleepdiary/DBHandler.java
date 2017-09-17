@@ -32,17 +32,25 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-//        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_SHOPS + "("
-//                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-//                + KEY_SH_ADDR + " TEXT" + ")";
-//        db.execSQL(CREATE_CONTACTS_TABLE);
+        String CREATE_TABLE = "CREATE TABLE " + TABLE_DI + "("
+                + KEY_ID + " INTEGER PRIMARY KEY,"
+                + KEY_SLEEP_DATE + " TEXT,"
+                + KEY_BED_IN + " TEXT,"
+                + KEY_SLEEP_TRY + " TEXT,"
+                + KEY_SLEEP_TIME + " TEXT,"
+                + KEY_WAKE_TIME + " TEXT,"
+                + KEY_BED_OUT + " TEXT,"
+                + KEY_NUM_WAKES + " INTEGER,"
+                + KEY_SLEEP_RATE + " INTEGER,"
+                + KEY_FEEL_RATE + " INTEGER" + ")";
+        db.execSQL(CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//        // Drop older table if existed
-//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SHOPS);
-//        // Creating tables again
-//        onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DI);
+        onCreate(db);
     }
+
+    
 }
