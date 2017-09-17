@@ -7,14 +7,121 @@ package com.manshantsingh.sleepdiary;
 public class DailyInfo {
     private int id;
     private String sleepDate;
-    private String bedInTime;
+    private String bedIn;
     private String sleepTry;
     private String sleepTime;
     private String wakeTime;
-    private String bedOutTime;
+    private String bedOut;
 
     private int numWakes;
 
     private int sleepRate;
     private int feelRate;
+
+    public DailyInfo(int _id, String _sleepDate, String _bedIn, String _sleepTry, String _sleepTime,
+                     String _wakeTime, String _bedOut, int _numWakes, int _sleepRate, int _feelRate){
+        this(_sleepDate, _bedIn, _sleepTry, _sleepTime, _wakeTime, _bedOut, _numWakes, _sleepRate, _feelRate);
+        id=_id;
+    }
+
+    public DailyInfo(String _sleepDate, String _bedIn, String _sleepTry, String _sleepTime,
+                     String _wakeTime, String _bedOut, int _numWakes, int _sleepRate, int _feelRate){
+        sleepDate=_sleepDate;
+        bedIn=_bedIn;
+        sleepTry=_sleepTry;
+        sleepTime=_sleepTime;
+        wakeTime=_wakeTime;
+        bedOut=_bedOut;
+        numWakes=_numWakes;
+        sleepRate=_sleepRate;
+        feelRate=_feelRate;
+    }
+
+    private String TimeToString(int time){
+        return "";
+    }
+
+    private int StringToTime(String time){
+        return 0;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSleepDate() {
+        return sleepDate;
+    }
+
+    public void setSleepDate(String sleepDate) {
+        this.sleepDate = sleepDate;
+    }
+
+    public String getBedIn() {
+        return bedIn;
+    }
+
+    public void setBedIn(String bedIn) {
+        this.bedIn = bedIn;
+    }
+
+    public String getSleepTry() {
+        return sleepTry;
+    }
+
+    public void setSleepTry(String sleepTry) {
+        this.sleepTry = sleepTry;
+    }
+
+    public String getSleepTime() {
+        return sleepTime;
+    }
+
+    public void setSleepTime(String sleepTime) {
+        this.sleepTime = sleepTime;
+    }
+
+    public String getWakeTime() {
+        return wakeTime;
+    }
+
+    public void setWakeTime(String wakeTime) {
+        this.wakeTime = wakeTime;
+    }
+
+    public String getBedOut() {
+        return bedOut;
+    }
+
+    public void setBedOut(String bedOut) {
+        this.bedOut = bedOut;
+    }
+
+    public int getNumWakes() {
+        return numWakes;
+    }
+
+    public void setNumWakes(int numWakes) {
+        this.numWakes = numWakes;
+    }
+
+    public int getSleepRate() {
+        return sleepRate;
+    }
+
+    public void setSleepRate(int sleepRate) {
+        this.sleepRate = sleepRate;
+    }
+
+    public int getFeelRate() {
+        return feelRate;
+    }
+
+    public void setFeelRate(int feelRate) {
+        this.feelRate = feelRate;
+    }
 }
