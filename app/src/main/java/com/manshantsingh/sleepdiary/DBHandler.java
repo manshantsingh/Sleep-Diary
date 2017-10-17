@@ -75,7 +75,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public int updateShop(DailyInfo dailyInfo) {
+    public int updateDailyInfo(DailyInfo dailyInfo) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -95,7 +95,7 @@ public class DBHandler extends SQLiteOpenHelper {
         return retVal;
     }
 
-    public void deleteShop(DailyInfo dailyInfo) {
+    public void deleteDailyInfo(DailyInfo dailyInfo) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TABLE_DI, KEY_ID + " = ?",
                 new String[] { String.valueOf(dailyInfo.getId()) });
