@@ -11,7 +11,9 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GraphActivity extends Activity {
 
@@ -25,7 +27,14 @@ public class GraphActivity extends Activity {
         chart = (LineChart) findViewById(R.id.chart1);
 
         // TODO: get data from database and set it into the correct format
-        ArrayList<Entry> plotData = new ArrayList<Entry>();
+        ArrayList<Entry> plotData = new ArrayList<Entry>(Arrays.asList(
+                new Entry(1,3),
+                new Entry(2,2),
+                new Entry(3,5),
+                new Entry(4,3),
+                new Entry(5,8),
+                new Entry(6,1)
+        ));
 
         LineDataSet set1 = new LineDataSet(plotData, "DataSet 1");
         set1.setAxisDependency(YAxis.AxisDependency.LEFT);
