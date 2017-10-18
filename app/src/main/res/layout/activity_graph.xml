@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.manshantsingh.sleepdiary.GraphActivity">
 
-    <com.github.mikephil.charting.charts.BarChart
+    <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart1"
         android:layout_width="277dp"
         android:layout_height="285dp"
