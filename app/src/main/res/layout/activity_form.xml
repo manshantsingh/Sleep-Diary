@@ -37,12 +37,12 @@
         android:textColor="@android:color/white" />
 
     <Button
-        android:id="@+id/btn_skip"
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="Skip"
+        android:text="Back"
         android:textColor="@android:color/white" />
 
 </RelativeLayout>
