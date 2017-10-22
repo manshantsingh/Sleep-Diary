@@ -36,7 +36,8 @@ public class FormActivity extends Activity {
         btnBack = (Button) findViewById(R.id.btn_back);
 
         layouts = new int[]{
-                R.layout.form_page1
+                R.layout.form_page1,
+                R.layout.form_page2
         };
 
         progressBars = new TextView[layouts.length];
