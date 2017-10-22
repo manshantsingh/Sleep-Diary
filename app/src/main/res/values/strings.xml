@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Sleep Diary</string>
+    <string name="form_page1_disc">How many coffees you had yesterday</string>
+
 </resources>
