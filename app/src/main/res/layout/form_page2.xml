@@ -3,17 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginTop="9dp"
-        android:text="TIRED
-"
-        android:layout_below="@+id/form_page2_tired_button"
-        android:layout_alignEnd="@+id/form_page2_tired_button" />
-
     <ImageView
         android:id="@+id/form_page2_imageView"
         android:layout_width="@dimen/img_width_height"
@@ -133,13 +122,24 @@
         android:text="SAD" />
 
     <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/form_page2_tired_button"
+        android:layout_below="@+id/form_page2_tired_button"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="9dp"
+        android:text="TIRED
+" />
+
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="JOYFUL"
+        android:layout_alignBaseline="@+id/textView10"
         android:layout_alignBottom="@+id/textView10"
-        android:layout_alignEnd="@+id/form_page2_joyful_button"
-        android:layout_alignTop="@+id/textView10" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView10"
