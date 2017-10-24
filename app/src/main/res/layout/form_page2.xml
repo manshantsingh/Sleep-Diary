@@ -3,11 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="9dp"
+        android:text="TIRED
+"
+        android:layout_below="@+id/form_page2_tired_button"
+        android:layout_alignEnd="@+id/form_page2_tired_button" />
+
     <ImageView
         android:id="@+id/form_page2_imageView"
         android:layout_width="@dimen/img_width_height"
         android:layout_height="@dimen/img_width_height"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         android:src="@mipmap/ic_launcher_round"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -17,14 +28,136 @@
         android:textSize="@dimen/slide_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="29dp"
         android:paddingLeft="@dimen/desc_padding"
         android:paddingRight="@dimen/desc_padding"
         android:text="@string/form_page2_desc"
         android:textAlignment="center"
+        android:layout_marginEnd="11dp"
         android:layout_below="@+id/form_page2_imageView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="11dp" />
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:id="@+id/form_page2_happy_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignTop="@+id/form_page2_content_button"
+        android:layout_marginEnd="14dp"
+        android:layout_toStartOf="@+id/form_page2_imageView"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/circle"
+        android:text="" />
+
+    <ImageButton
+        android:id="@+id/form_page2_content_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignTop="@+id/form_page2_joyful_button"
+        android:layout_marginStart="25dp"
+        android:layout_toEndOf="@+id/form_page2_imageView"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/circle"
+        android:text="" />
+
+    <ImageButton
+        android:id="@+id/form_page2_joyful_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="55dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/circle"
+        android:text=""
+        android:layout_below="@+id/form_page2_sad_button"
+        android:layout_alignStart="@+id/form_page2_sad_button" />
+
+    <ImageButton
+        android:id="@+id/form_page2_tired_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/circle"
+        android:text=""
+        android:layout_alignTop="@+id/form_page2_sad_button"
+        android:layout_alignStart="@+id/form_page2_happy_button" />
+
+    <ImageButton
+        android:id="@+id/form_page2_angry_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/circle"
+        android:text=""
+        android:layout_alignTop="@+id/form_page2_sad_button"
+        android:layout_alignStart="@+id/form_page2_content_button" />
+
+    <ImageButton
+        android:id="@+id/form_page2_sad_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/form_page2_descTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/circle"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignStart="@+id/form_page2_angry_button"
+        android:layout_marginStart="15dp"
+        android:text="ANGRY" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView8"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_centerHorizontal="true"
+        android:text="SAD" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JOYFUL"
+        android:layout_alignBottom="@+id/textView10"
+        android:layout_alignEnd="@+id/form_page2_joyful_button"
+        android:layout_alignTop="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView8"
+        android:layout_below="@+id/form_page2_happy_button"
+        android:layout_marginTop="18dp"
+        android:text="HAPPY" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignEnd="@+id/textView"
+        android:text="CONTENT" />
 
 
 </RelativeLayout>
