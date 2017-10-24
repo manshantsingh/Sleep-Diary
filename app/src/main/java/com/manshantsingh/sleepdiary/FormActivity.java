@@ -1,18 +1,18 @@
 package com.manshantsingh.sleepdiary;
 
 import android.app.Activity;
-import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 public class FormActivity extends Activity {
 
@@ -21,7 +21,6 @@ public class FormActivity extends Activity {
     private ViewPager viewPager;
     private ViewPageAdapter viewPageAdapter;
     private LinearLayout progressBarLayout;
-    private TextView[] progressBars;
     private int[] layouts;
     private Button btnNext, btnBack;
 
@@ -37,15 +36,10 @@ public class FormActivity extends Activity {
 
         layouts = new int[]{
                 R.layout.form_page1,
-                R.layout.form_page2
+                R.layout.form_page2,
+                R.layout.form_page3
         };
 
-        progressBars = new TextView[layouts.length];
-        for (int i = 0; i < progressBars.length; i++) {
-            progressBars[i] = new TextView(this);
-            progressBars[i].setText("_");
-            progressBars[i].setTextSize(35);
-        }
         updateProgressBar(0);
 
         viewPageAdapter = new ViewPageAdapter();
@@ -74,18 +68,27 @@ public class FormActivity extends Activity {
     }
 
     private void updateProgressBar(int currentPosition) {
-        int colorOn = getColor(R.color.progress_bar_on);
-        int colorOff = getColor(R.color.progress_bar_off);
 
         progressBarLayout.removeAllViews();
 
+        ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(50,20);
+        lp.setMargins(5,0,5,0);
+
+        Drawable on = ResourcesCompat.getDrawable(getResources(), R.drawable.r_progress_bar_box_on, null);
+        Drawable off = ResourcesCompat.getDrawable(getResources(), R.drawable.r_progress_bar_box_off, null);
+
+
         for (int i = 0; i <= currentPosition; i++) {
-            progressBars[i].setTextColor(colorOn);
-            progressBarLayout.addView(progressBars[i]);
+            View v = new View(this);
+            v.setLayoutParams(lp);
+            v.setBackground(on);
+            progressBarLayout.addView(v);
         }
-        for (int i = currentPosition + 1; i < progressBars.length; i++) {
-            progressBars[i].setTextColor(colorOff);
-            progressBarLayout.addView(progressBars[i]);
+        for (int i = currentPosition + 1; i < layouts.length; i++) {
+            View v = new View(this);
+            v.setLayoutParams(lp);
+            v.setBackground(off);
+            progressBarLayout.addView(v);
         }
     }
 
