@@ -17,12 +17,12 @@
         android:textSize="@dimen/slide_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="15dp"
         android:paddingLeft="@dimen/desc_padding"
         android:paddingRight="@dimen/desc_padding"
         android:text="@string/form_page2_desc"
         android:textAlignment="center"
-        android:layout_marginEnd="11dp"
+        android:layout_marginEnd="48dp"
         android:layout_below="@+id/form_page2_imageView"
         android:layout_alignParentEnd="true" />
 
@@ -93,14 +93,14 @@
         android:id="@+id/form_page2_sad_button"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_below="@+id/form_page2_descTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="20dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:scaleType="fitCenter"
         android:src="@drawable/circle"
-        android:text="" />
+        android:text=""
+        android:layout_below="@+id/form_page2_descTextView"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView"
