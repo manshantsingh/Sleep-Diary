@@ -42,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/minusButton"
+        android:onClick="decrementCount"
         android:layout_alignTop="@+id/form_page1_coffeeCount"
         android:layout_toStartOf="@+id/form_page1_imageView" />
 
@@ -50,6 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/plusButton"
+        android:onClick="incrementCount"
         android:layout_alignBottom="@+id/form_page1_coffeeCount"
         android:layout_toEndOf="@+id/form_page1_imageView" />
 

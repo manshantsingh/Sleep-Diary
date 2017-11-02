@@ -19,16 +19,17 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "SleepDiary";
     private static final String TABLE_DI = "DailyInfo";
 
-    private static final String KEY_ID="id";
-    private static final String KEY_SLEEP_DATE="sleepDate";
-    private static final String KEY_BED_IN="bedIn";
-    private static final String KEY_SLEEP_TRY="sleepTry";
-    private static final String KEY_SLEEP_TIME="sleepTime";
-    private static final String KEY_WAKE_TIME="wakeTime";
-    private static final String KEY_BED_OUT="bedOut";
-    private static final String KEY_NUM_WAKES="numWakes";
-    private static final String KEY_SLEEP_RATE="sleepRate";
-    private static final String KEY_FEEL_RATE="feelRate";
+    private static final String KEY_ID = "id";
+    private static final String KEY_SLEEP_DATE = "sleepDate";
+    private static final String KEY_BED_IN = "bedIn";
+    private static final String KEY_SLEEP_TRY = "sleepTry";
+    private static final String KEY_SLEEP_TIME = "sleepTime";
+    private static final String KEY_WAKE_TIME = "wakeTime";
+    private static final String KEY_BED_OUT = "bedOut";
+    private static final String KEY_NUM_WAKES = "numWakes";
+    private static final String KEY_SLEEP_RATE = "sleepRate";
+    private static final String KEY_FEEL_RATE = "feelRate";
+    private static final String KEY_NUM_COFFEE = "numCoffee";
 
 
     public DBHandler(Context context) {
@@ -47,7 +48,8 @@ public class DBHandler extends SQLiteOpenHelper {
                 + KEY_BED_OUT + " TEXT,"
                 + KEY_NUM_WAKES + " INTEGER,"
                 + KEY_SLEEP_RATE + " INTEGER,"
-                + KEY_FEEL_RATE + " INTEGER" + ")";
+                + KEY_FEEL_RATE + " INTEGER"
+                + KEY_NUM_COFFEE + " INTEGER" + ")";
         db.execSQL(CREATE_TABLE);
     }
 
@@ -57,7 +59,7 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addDailyInfo(DailyInfo dailyInfo){
+    public void addDailyInfo(DailyInfo dailyInfo) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -70,6 +72,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(KEY_NUM_WAKES, dailyInfo.getNumWakes());
         values.put(KEY_SLEEP_RATE, dailyInfo.getSleepRate());
         values.put(KEY_FEEL_RATE, dailyInfo.getFeelRate());
+        values.put(KEY_NUM_COFFEE, dailyInfo.getFeelRate());
 
         db.insert(TABLE_DI, null, values);
         db.close();
@@ -88,6 +91,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(KEY_NUM_WAKES, dailyInfo.getNumWakes());
         values.put(KEY_SLEEP_RATE, dailyInfo.getSleepRate());
         values.put(KEY_FEEL_RATE, dailyInfo.getFeelRate());
+        values.put(KEY_NUM_COFFEE, dailyInfo.getFeelRate());
 
         int retVal = db.update(TABLE_DI, values, KEY_ID + " = ?",
                 new String[]{String.valueOf(dailyInfo.getId())});
@@ -98,7 +102,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public void deleteDailyInfo(DailyInfo dailyInfo) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TABLE_DI, KEY_ID + " = ?",
-                new String[] { String.valueOf(dailyInfo.getId()) });
+                new String[]{String.valueOf(dailyInfo.getId())});
         db.close();
     }
 
@@ -114,7 +118,8 @@ public class DBHandler extends SQLiteOpenHelper {
         DailyInfo dailyInfo = new DailyInfo(cursor.getInt(0),
                 cursor.getString(1), cursor.getString(2), cursor.getString(3),
                 cursor.getString(4), cursor.getString(5), cursor.getString(6),
-                cursor.getInt(7), cursor.getInt(8), cursor.getInt(9));
+                cursor.getInt(7), cursor.getInt(8), cursor.getInt(9),
+                cursor.getInt(10));
 
         cursor.close();
         db.close();
@@ -133,7 +138,8 @@ public class DBHandler extends SQLiteOpenHelper {
         DailyInfo dailyInfo = new DailyInfo(cursor.getInt(0),
                 cursor.getString(1), cursor.getString(2), cursor.getString(3),
                 cursor.getString(4), cursor.getString(5), cursor.getString(6),
-                cursor.getInt(7), cursor.getInt(8), cursor.getInt(9));
+                cursor.getInt(7), cursor.getInt(8), cursor.getInt(9),
+                cursor.getInt(10));
 
         cursor.close();
         db.close();
@@ -151,7 +157,8 @@ public class DBHandler extends SQLiteOpenHelper {
                 dailyInfoList.add(new DailyInfo(cursor.getInt(0),
                         cursor.getString(1), cursor.getString(2), cursor.getString(3),
                         cursor.getString(4), cursor.getString(5), cursor.getString(6),
-                        cursor.getInt(7), cursor.getInt(8), cursor.getInt(9)));
+                        cursor.getInt(7), cursor.getInt(8), cursor.getInt(9),
+                        cursor.getInt(10)));
             } while (cursor.moveToNext());
         }
 
@@ -165,7 +172,7 @@ public class DBHandler extends SQLiteOpenHelper {
         List<DailyInfo> dailyInfoList = new ArrayList<DailyInfo>();
         SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = db.query(TABLE_DI, null,
-                KEY_SLEEP_DATE + ">=? AND "+ KEY_SLEEP_DATE + "<=?",
+                KEY_SLEEP_DATE + ">=? AND " + KEY_SLEEP_DATE + "<=?",
                 new String[]{startDate, endDate}, null, null, null, null);
         if (cursor == null)
             return dailyInfoList;
@@ -175,7 +182,8 @@ public class DBHandler extends SQLiteOpenHelper {
                 dailyInfoList.add(new DailyInfo(cursor.getInt(0),
                         cursor.getString(1), cursor.getString(2), cursor.getString(3),
                         cursor.getString(4), cursor.getString(5), cursor.getString(6),
-                        cursor.getInt(7), cursor.getInt(8), cursor.getInt(9)));
+                        cursor.getInt(7), cursor.getInt(8), cursor.getInt(9),
+                        cursor.getInt(10)));
             } while (cursor.moveToNext());
         }
 

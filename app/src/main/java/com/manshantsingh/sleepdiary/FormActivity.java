@@ -2,32 +2,33 @@ package com.manshantsingh.sleepdiary;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import static java.lang.Math.max;
 
 public class FormActivity extends Activity {
-
-    private static String TAG = "hehe";
 
     private ViewPager viewPager;
     private ViewPageAdapter viewPageAdapter;
     private LinearLayout progressBarLayout;
     private int[] layouts;
     private Button btnNext, btnBack;
+    private DailyInfo dailyInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+
+        dailyInfo = new DailyInfo();
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         progressBarLayout = (LinearLayout) findViewById(R.id.layoutProgressBar);
@@ -67,12 +68,36 @@ public class FormActivity extends Activity {
         });
     }
 
+    private void updateFormInfo() {
+        switch (layouts[viewPager.getCurrentItem()]) {
+            case R.layout.form_page1:
+                TextView t = (TextView) findViewById(R.id.form_page1_coffeeCount);
+                t.setText(String.valueOf(dailyInfo.getNumCoffee()));
+        }
+    }
+
+    private void updateIntVal(int diff) {
+        switch (layouts[viewPager.getCurrentItem()]) {
+            case R.layout.form_page1:
+                dailyInfo.setNumCoffee(max(0, dailyInfo.getNumCoffee() + diff));
+        }
+        updateFormInfo();
+    }
+
+    public void incrementCount(View v) {
+        updateIntVal(1);
+    }
+
+    public void decrementCount(View v) {
+        updateIntVal(-1);
+    }
+
     private void updateProgressBar(int currentPosition) {
 
         progressBarLayout.removeAllViews();
 
-        ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(50,20);
-        lp.setMargins(5,0,5,0);
+        ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(50, 20);
+        lp.setMargins(5, 0, 5, 0);
 
         Drawable on = ResourcesCompat.getDrawable(getResources(), R.drawable.r_progress_bar_box_on, null);
         Drawable off = ResourcesCompat.getDrawable(getResources(), R.drawable.r_progress_bar_box_off, null);
@@ -97,6 +122,7 @@ public class FormActivity extends Activity {
         @Override
         public void onPageSelected(int position) {
             updateProgressBar(position);
+            updateFormInfo();
 
             // TODO: do other stuff too
         }

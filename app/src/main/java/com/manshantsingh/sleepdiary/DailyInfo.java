@@ -14,34 +14,42 @@ public class DailyInfo {
     private String bedOut;
 
     private int numWakes;
+    private int numCoffee;
 
     private int sleepRate;
     private int feelRate;
 
+    public DailyInfo() {
+        // Default values for a new form info
+        numWakes = 0;
+        numCoffee = 0;
+    }
+
     public DailyInfo(int _id, String _sleepDate, String _bedIn, String _sleepTry, String _sleepTime,
-                     String _wakeTime, String _bedOut, int _numWakes, int _sleepRate, int _feelRate){
-        this(_sleepDate, _bedIn, _sleepTry, _sleepTime, _wakeTime, _bedOut, _numWakes, _sleepRate, _feelRate);
-        id=_id;
+                     String _wakeTime, String _bedOut, int _numWakes, int _sleepRate, int _feelRate, int _numCoffee) {
+        this(_sleepDate, _bedIn, _sleepTry, _sleepTime, _wakeTime, _bedOut, _numWakes, _sleepRate, _feelRate, _numCoffee);
+        id = _id;
     }
 
     public DailyInfo(String _sleepDate, String _bedIn, String _sleepTry, String _sleepTime,
-                     String _wakeTime, String _bedOut, int _numWakes, int _sleepRate, int _feelRate){
-        sleepDate=_sleepDate;
-        bedIn=_bedIn;
-        sleepTry=_sleepTry;
-        sleepTime=_sleepTime;
-        wakeTime=_wakeTime;
-        bedOut=_bedOut;
-        numWakes=_numWakes;
-        sleepRate=_sleepRate;
-        feelRate=_feelRate;
+                     String _wakeTime, String _bedOut, int _numWakes, int _sleepRate, int _feelRate, int _numCoffee) {
+        sleepDate = _sleepDate;
+        bedIn = _bedIn;
+        sleepTry = _sleepTry;
+        sleepTime = _sleepTime;
+        wakeTime = _wakeTime;
+        bedOut = _bedOut;
+        numWakes = _numWakes;
+        sleepRate = _sleepRate;
+        feelRate = _feelRate;
+        numCoffee = _numCoffee;
     }
 
-    private String timeToString(int time){
+    private String timeToString(int time) {
         return "";
     }
 
-    private int stringToTime(String time){
+    private int stringToTime(String time) {
         return 0;
     }
 
@@ -123,5 +131,13 @@ public class DailyInfo {
 
     public void setFeelRate(int feelRate) {
         this.feelRate = feelRate;
+    }
+
+    public int getNumCoffee() {
+        return numCoffee;
+    }
+
+    public void setNumCoffee(int numCoffee) {
+        this.numCoffee = numCoffee;
     }
 }
