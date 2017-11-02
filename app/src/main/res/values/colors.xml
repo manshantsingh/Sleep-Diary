@@ -7,4 +7,5 @@
     <!-- dots inactive colors -->
     <color name="progress_bar_on">#fcf11b</color>
     <color name="progress_bar_off">#1ab0fc</color>
+    <color name="form_page1_color">#ffff</color>
 </resources>

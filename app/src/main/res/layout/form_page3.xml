@@ -14,17 +14,15 @@
 
     <TextView
         android:id="@+id/form_page2_descTextView"
-        android:textSize="@dimen/slide_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="14dp"
         android:paddingLeft="@dimen/desc_padding"
         android:paddingRight="@dimen/desc_padding"
-        android:text="@string/form_page2_desc"
-        android:textAlignment="center"
-        android:layout_marginEnd="48dp"
+        android:text="How was your Sleep"
+        android:textSize="@dimen/slide_desc"
         android:layout_below="@+id/form_page2_imageView"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignEnd="@+id/form_page2_angry_button" />
 
     <ImageButton
         android:id="@+id/form_page2_happy_button"
@@ -110,7 +108,7 @@
         android:layout_alignBottom="@+id/textView3"
         android:layout_alignStart="@+id/form_page2_angry_button"
         android:layout_marginStart="15dp"
-        android:text="ANGRY" />
+        android:text="BROKEN" />
 
     <TextView
         android:id="@+id/textView3"
@@ -119,7 +117,7 @@
         android:layout_alignBaseline="@+id/textView8"
         android:layout_alignBottom="@+id/textView8"
         android:layout_centerHorizontal="true"
-        android:text="SAD" />
+        android:text="COLD" />
 
     <TextView
         android:id="@+id/textView8"
@@ -129,7 +127,7 @@
         android:layout_below="@+id/form_page2_tired_button"
         android:layout_marginEnd="12dp"
         android:layout_marginTop="9dp"
-        android:text="TIRED
+        android:text="SHORT
 " />
 
     <TextView

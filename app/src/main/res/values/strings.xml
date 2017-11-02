@@ -2,5 +2,7 @@
     <string name="app_name">Sleep Diary</string>
     <string name="form_page1_desc">How many coffees you had yesterday</string>
     <string name="form_page2_desc">How are you feeling today</string>
-
+    <string name="form_page1_coffeeCountText">0</string>
+    <string name="plusButton">+</string>
+    <string name="minusButton">-</string>
 </resources>
