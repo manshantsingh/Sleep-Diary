@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/cm_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle"
+        android:textSize="24sp"
+        tools:text="Type any Comments you have"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/commnets_s"
+        android:layout_width="275dp"
+        android:layout_height="165dp"
+        android:layout_marginTop="61dp"
+        android:background="@drawable/comments_section"
+        android:shadowRadius="10dp"
+        android:textSize="28dp"
+        android:layout_below="@+id/cm_heading"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/comment_skip"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/mybutton"
+        android:shadowColor="@color/colorAccent"
+        android:text="Skip" />
+
+
+</RelativeLayout>
